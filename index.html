@@ -19,20 +19,29 @@
       padding: 0;
       box-sizing: border-box;
     }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  background-image: 
+    url('https://raw.githubusercontent.com/VinayakPrakashh/VinayakPrakashh.github.io/main/774373.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-light);
+  line-height: 1.6;
+  animation: fadeInBody 1s ease-in-out;
+  position: relative;
+  z-index: 0;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      background-image: 
-        radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.05), transparent 40%),
-        url('https://raw.githubusercontent.com/VinayakPrakashh/VinayakPrakashh.github.io/main/774373.jpg')
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: var(--text-light);
-      line-height: 1.6;
-      animation: fadeInBody 1s ease-in-out;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  backdrop-filter: blur(6px); /* soft blur */
+  z-index: -1;
+}
 
     @keyframes fadeInBody {
       from { opacity: 0; }
