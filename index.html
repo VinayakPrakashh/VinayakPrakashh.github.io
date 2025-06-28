@@ -1,56 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinayak's Awesome Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        p {
-            line-height: 1.6;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinayak Prakash | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .project {
+      margin-bottom: 1.5rem;
+    }
+    .project h3 {
+      margin: 0 0 0.3rem;
+    }
+    .project p {
+      margin: 0.2rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Vinayak's Awesome Website</h1>
-    </header>
-    <div class="container">
-        <p>This is a paragraph of text on Vinayak's awesome website. Feel free to customize it with your own content.</p>
-    </div>
-    <footer>
-        <p>&copy; 2024 Vinayak</p>
-    </footer>
+
+  <header>
+    <h1>Vinayak Prakash</h1>
+    <p>Electronics & Computer Architect | Portfolio</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m an engineering student passionate about digital design, SoCs, motor control, and embedded systems. I love building real-world hardware projects that solve practical problems.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>🧠 Neural Processing Unit on FPGA</h3>
+        <p>Custom-designed NPU supporting CNN layers (conv, ReLU, pooling, FC) in Verilog with parallel multipliers and optimized datapath.</p>
+      </div>
+
+      <div class="project">
+        <h3>⚙️ BLDC Motor Controller for Shell Eco Car</h3>
+        <p>Designed an STM32 + DRV8302-based motor controller for a 48V 750W hub motor. Implemented six-step commutation and torque optimization.</p>
+      </div>
+
+      <div class="project">
+        <h3>🧮 Heterogeneous Processor on FPGA</h3>
+        <p>Built a custom ALU-GPU-NPU-VGA SoC with AXI4 interconnect, UART programming, and VGA output. All modules designed from scratch.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:vinayak@example.com">vinayak@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/YOUR_USERNAME" target="_blank">github.com/YOUR_USERNAME</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">linkedin.com/in/YOUR_LINKEDIN</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Vinayak Prakash. Built with 💻 and ☕.
+  </footer>
+
 </body>
 </html>
