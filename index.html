@@ -2,110 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vinayak Prakash | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    :root {
+      --bg: #0d1117;
+      --card-bg: rgba(36, 41, 46, 0.6);
+      --accent: #00ffe7;
+      --text-light: #e6f1ff;
+      --text-muted: #8b949e;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
     header {
-      background: #222;
-      color: #fff;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 3rem 1rem 2rem;
     }
-    header h1 {
-      margin: 0;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-light);
+      backdrop-filter: blur(10px);
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    h1 {
       font-size: 2.5rem;
+      font-weight: 800;
     }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
     }
+
     main {
-      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
       margin: auto;
-      padding: 2rem 1rem;
+      padding: 2rem;
     }
-    section {
-      margin-bottom: 3rem;
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
     }
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
+
+    .card h2 {
+      font-size: 1.3rem;
       margin-bottom: 1rem;
+      color: var(--accent);
     }
-    .project {
-      margin-bottom: 1.5rem;
+
+    .card h3 {
+      margin: 0.5rem 0 0.3rem;
+      color: #fff;
     }
-    .project h3 {
-      margin: 0 0 0.3rem;
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
     }
-    .project p {
-      margin: 0.2rem 0;
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
     }
+
+    .social-icons a {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.6rem;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: var(--accent);
+    }
+
+    .social-icons svg {
+      fill: var(--text-light);
+      width: 20px;
+      height: 20px;
+    }
+
     footer {
       text-align: center;
-      padding: 1rem;
+      color: var(--text-muted);
       font-size: 0.9rem;
-      color: #666;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      padding: 2rem 0;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <h1>Vinayak Prakash</h1>
-    <p>Electronics & Computer Architect | Portfolio</p>
+    <p class="subtitle">Electronics & Embedded Systems Engineer</p>
   </header>
 
   <main>
-    <section id="about">
+    <section class="card" id="about">
       <h2>About Me</h2>
-      <p>I’m an engineering student passionate about digital design, SoCs, motor control, and embedded systems. I love building real-world hardware projects that solve practical problems.</p>
+      <p>I’m an engineering student passionate about creating innovative solutions with hardware and software. My interests include digital design, motor control, and FPGA development.</p>
     </section>
 
-    <section id="projects">
+    <section class="card" id="projects">
       <h2>Projects</h2>
 
-      <div class="project">
-        <h3>🧠 Neural Processing Unit on FPGA</h3>
-        <p>Custom-designed NPU supporting CNN layers (conv, ReLU, pooling, FC) in Verilog with parallel multipliers and optimized datapath.</p>
+      <div>
+        <h3>EV Motor Controller for Shell Eco-marvlhon</h3>
+        <p>Developed a custom BLDC motor controller for an energy-efficient electric vehicle.</p>
       </div>
 
-      <div class="project">
-        <h3>⚙️ BLDC Motor Controller for Shell Eco Car</h3>
-        <p>Designed an STM32 + DRV8302-based motor controller for a 48V 750W hub motor. Implemented six-step commutation and torque optimization.</p>
+      <div>
+        <h3>Custom ESC for Electric Vehicles</h3>
+        <p>Designed and implemented an optimized electronic speed controller for EV applications.</p>
       </div>
 
-      <div class="project">
-        <h3>🧮 Heterogeneous Processor on FPGA</h3>
-        <p>Built a custom ALU-GPU-NPU-VGA SoC with AXI4 interconnect, UART programming, and VGA output. All modules designed from scratch.</p>
+      <div>
+        <h3>SoC Design with Verilog</h3>
+        <p>Creating a system on chip using Verilog for high-performance computing tasks.</p>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="card" id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:vinayak@example.com">vinayak@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/YOUR_USERNAME" target="_blank">github.com/YOUR_USERNAME</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank">linkedin.com/in/YOUR_LINKEDIN</a></p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm1 5H3v13h2V8Zm4 0h2v1.6c.3-.5 1-1.6 2.7-1.6 2.4 0 3.3 1.6 3.3 4v8h-2v-7c0-1.3-.2-2.3-1.7-2.3s-2 1.2-2 2.4v6.9H9V8Z"/></svg>
+        </a>
+        <a href="https://github.com/YOUR_GITHUB" target="_blank" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .3A12 12 0 0 0 0 12c0 5.3 3.4 9.8 8 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.5-4-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.3 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.4 1.2a11.6 11.6 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 2 1.2 3.3 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+        </a>
+        <a href="https://twitter.com/YOUR_TWITTER" target="_blank" title="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M22.5 5.9c-.8.3-1.5.6-2.3.7a4.2 4.2 0 0 0 1.8-2.4c-.8.5-1.7.8-2.6 1a4.2 4.2 0 0 0-7.2 3.8c-3.5-.2-6.5-1.9-8.5-4.5a4.2 4.2 0 0 0 1.3 5.6c-.7 0-1.4-.2-2-.5v.1a4.2 4.2 0 0 0 3.3 4.1c-.6.2-1.3.2-2 .1a4.2 4.2 0 0 0 3.9 2.9A8.5 8.5 0 0 1 2 19.5a12 12 0 0 0 6.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5c.8-.6 1.5-1.3 2-2.1Z"/></svg>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Vinayak Prakash. Built with 💻 and ☕.
+    &copy; 2025 Vinayak Prakash — All Rights Reserved.
   </footer>
 
 </body>
