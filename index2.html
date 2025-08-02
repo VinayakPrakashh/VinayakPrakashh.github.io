@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinayak Prakash | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: rgba(36, 41, 46, 0.6);
+      --accent: #00ffe7;
+      --text-light: #e6f1ff;
+      --text-muted: #8b949e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  background-image: 
+    url('https://raw.githubusercontent.com/VinayakPrakashh/VinayakPrakashh.github.io/main/774373.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-light);
+  line-height: 1.6;
+  animation: fadeInBody 1s ease-in-out;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  backdrop-filter: blur(6px); /* soft blur */
+  z-index: -1;
+}
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-light);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: var(--accent);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.5s; }
+    .card:nth-child(3) { animation-delay: 0.7s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      transform: scale(1.015);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .card h3 {
+      margin: 0.5rem 0 0.3rem;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.6rem;
+      border-radius: 50%;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .social-icons svg {
+      fill: var(--text-light);
+      width: 20px;
+      height: 20px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 2rem 0;
+      animation: fadeInBody 2s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <h1>Vinayak Prakash</h1>
+    <p class="subtitle">Electronics & Embedded Systems Engineer</p>
+  </header>
+
+  <main>
+    <section class="card" id="about">
+      <h2>About Me</h2>
+      <p>I’m an engineering student passionate about creating innovative solutions with hardware and software. My interests include digital design, motor control, and FPGA development.</p>
+    </section>
+
+    <section class="card" id="projects">
+      <h2>Projects</h2>
+
+      <div>
+        <h3>EV Motor Controller for Shell Eco-marathon</h3>
+        <p>Developed a custom BLDC motor controller for an energy-efficient electric vehicle.</p>
+      </div>
+
+      <div>
+        <h3>Custom ESC for Electric Vehicles</h3>
+        <p>Designed and implemented an optimized electronic speed controller for EV applications.</p>
+      </div>
+
+      <div>
+        <h3>SoC Design with Verilog</h3>
+        <p>Creating a system on chip using Verilog for high-performance computing tasks.</p>
+      </div>
+    </section>
+
+    <section class="card" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:vinayak@example.com">vinayak@example.com</a></p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" title="LinkedIn">🔗</a>
+        <a href="https://github.com/YOUR_GITHUB" target="_blank" title="GitHub">🐙</a>
+        <a href="mailto:vinayak@example.com" target="_blank" title="Email">✉️</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Vinayak Prakash — All Rights Reserved.
+  </footer>
+
+</body>
+</html>
